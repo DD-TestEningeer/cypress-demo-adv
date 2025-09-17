@@ -1,0 +1,23 @@
+{
+  "name": "cypress-web-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "node ./scripts/cleanReports.js",
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npm run clean:reports && npx cypress run",
+    "cypress:run:spec": "npx cypress run --spec",
+    "merge-reports": "npx mochawesome-merge cypress/reports/html/*.json > cypress/reports/report.json && npx marge cypress/reports/report.json -o cypress/reports/html",
+    "report": "npm run merge-reports"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^15.2.0"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^4.0.2"
+  }
+}
